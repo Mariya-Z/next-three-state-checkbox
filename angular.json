@@ -133,6 +133,41 @@
           }
         }
       }
+    },
+    "three-state-checkbox-lib": {
+      "root": "projects/three-state-checkbox-lib",
+      "sourceRoot": "projects/three-state-checkbox-lib/src",
+      "projectType": "library",
+      "prefix": "next",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-ng-packagr:build",
+          "options": {
+            "tsConfig": "projects/three-state-checkbox-lib/tsconfig.lib.json",
+            "project": "projects/three-state-checkbox-lib/ng-package.json"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/three-state-checkbox-lib/src/test.ts",
+            "tsConfig": "projects/three-state-checkbox-lib/tsconfig.spec.json",
+            "karmaConfig": "projects/three-state-checkbox-lib/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/three-state-checkbox-lib/tsconfig.lib.json",
+              "projects/three-state-checkbox-lib/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
     }
   },
   "defaultProject": "three-state-checkbox-lib-app"
