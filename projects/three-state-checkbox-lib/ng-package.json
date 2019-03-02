@@ -1,6 +1,6 @@
 {
   "$schema": "../../node_modules/ng-packagr/ng-package.schema.json",
-  "dest": "../../dist/three-state-checkbox-lib",
+  "dest": "../../dist/next-three-state-checkbox",
   "lib": {
     "entryFile": "src/public_api.ts"
   }

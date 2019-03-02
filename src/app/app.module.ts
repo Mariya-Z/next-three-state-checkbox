@@ -1,18 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
+import { NextThreeStateCheckboxModule } from 'next-three-state-checkbox';
+
 import { AppComponent } from './app.component';
-import { ThreeStateCheckboxLibModule } from 'three-state-checkbox-lib';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    ThreeStateCheckboxLibModule
+    NextThreeStateCheckboxModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

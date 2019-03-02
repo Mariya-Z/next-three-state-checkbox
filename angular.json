@@ -134,7 +134,7 @@
         }
       }
     },
-    "three-state-checkbox-lib": {
+    "next-three-state-checkbox": {
       "root": "projects/three-state-checkbox-lib",
       "sourceRoot": "projects/three-state-checkbox-lib/src",
       "projectType": "library",
