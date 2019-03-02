@@ -11,20 +11,11 @@
     "experimentalDecorators": true,
     "importHelpers": true,
     "target": "es5",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "typeRoots": ["node_modules/@types"],
+    "lib": ["es2018","dom"],
     "paths": {
-      "three-state-checkbox-lib": [
-        "dist/three-state-checkbox-lib"
-      ],
-      "three-state-checkbox-lib/*": [
-        "dist/three-state-checkbox-lib/*"
-      ]
+      "next-three-state-checkbox": ["dist/next-three-state-checkbox"],
+      "next-three-state-checkbox/*": ["dist/next-three-state-checkbox/*"]
     }
   }
 }

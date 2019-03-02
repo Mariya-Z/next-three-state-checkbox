@@ -6,8 +6,14 @@
     "start": "ng serve",
     "build": "ng build",
     "test": "ng test",
+    "test_lib": "ng test next-three-state-checkbox",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "build_lib": "ng build next-three-state-checkbox",
+    "npm_pack": "cd dist/next-three-state-checkbox && npm pack",
+    "postinstall": "npm run package",
+    "bump": "cd projects/next-three-state-checkbox && yarn version --patch",
+    "package": "yarn bump && yarn build_lib && yarn npm_pack"
   },
   "private": true,
   "dependencies": {

@@ -1,20 +1,20 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { ThreeStateCheckboxComponent } from './three-state-checkbox.component';
+import { NextThreeStateCheckboxComponent } from './three-state-checkbox.component';
 
 describe('ThreeStateCheckboxComponent', () => {
-  let component: ThreeStateCheckboxComponent;
-  let fixture: ComponentFixture<ThreeStateCheckboxComponent>;
+  let component: NextThreeStateCheckboxComponent;
+  let fixture: ComponentFixture<NextThreeStateCheckboxComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ThreeStateCheckboxComponent ]
+      declarations: [NextThreeStateCheckboxComponent],
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ThreeStateCheckboxComponent);
+    fixture = TestBed.createComponent(NextThreeStateCheckboxComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
