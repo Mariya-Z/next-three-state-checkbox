@@ -20,8 +20,8 @@ export const enum ThreeStateCheckboxStates {
 
 @Component({
   selector: 'next-three-state-checkbox',
-  templateUrl: './three-state-checkbox.component.html',
-  styleUrls: ['./three-state-checkbox.component.scss'],
+  templateUrl: './next-three-state-checkbox.component.html',
+  styleUrls: ['./next-three-state-checkbox.component.scss'],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,

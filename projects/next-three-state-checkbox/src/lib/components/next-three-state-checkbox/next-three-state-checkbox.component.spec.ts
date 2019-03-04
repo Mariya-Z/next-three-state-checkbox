@@ -1,6 +1,6 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { NextThreeStateCheckboxComponent } from './three-state-checkbox.component';
+import { NextThreeStateCheckboxComponent } from './next-three-state-checkbox.component';
 
 describe('ThreeStateCheckboxComponent', () => {
   let component: NextThreeStateCheckboxComponent;
