@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 import { NextThreeStateCheckboxModule } from 'next-three-state-checkbox';
 
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     NextThreeStateCheckboxModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

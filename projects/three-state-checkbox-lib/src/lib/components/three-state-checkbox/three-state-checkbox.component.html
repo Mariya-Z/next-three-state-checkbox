@@ -1,3 +1,15 @@
-<p>
-  three-state-checkbox works!
-</p>
+<label>
+  <input
+    type="checkbox"
+    #input
+    class="checkbox-input cdk-visually-hidden"
+    [class.indeterminate]="indeterminate"
+    [checked]="checked"
+    [disabled]="disabled"
+    [required]="required"
+    [tabIndex]="tabIndex"
+    [id]="inputId"
+    (change)="onChange($event)"
+  />
+  <div class="checkbox-input__background"></div>
+</label>
