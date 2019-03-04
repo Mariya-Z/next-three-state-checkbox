@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  title = 'three-state-checkbox-lib-app';
+  public disabled = false;
+  public id = '1';
+  public required = true;
+  public tabIndex = 1;
+  public isChecked = 2;
 }
