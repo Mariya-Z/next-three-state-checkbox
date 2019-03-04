@@ -39,9 +39,11 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
     return this.isChecked;
   }
 
-  public set checked(checked: any) {
+  public set checked(checked: number) {
     if (checked !== this.checked) {
       this.isChecked = checked;
+      this.indeterminate = checked === ThreeStateCheckboxStates.INDETERMINATE;
+      this.renderCheckbox();
     }
   }
   @Input() public disabled: boolean;
@@ -53,7 +55,7 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
 
   public indeterminate = false;
 
-  private isChecked = false;
+  private isChecked = 0;
 
   constructor(private changeDetectorRef: ChangeDetectorRef, private render: Renderer2, private el: ElementRef) {}
 
@@ -61,7 +63,7 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
     this.render.removeAttribute(this.el.nativeElement, 'id');
   }
 
-  public writeValue(value: any): void {
+  public writeValue(value: number): void {
     this.checked = value;
   }
 
@@ -94,7 +96,5 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
 
   private setState(value: ThreeStateCheckboxStates) {
     this.checked = value;
-    this.indeterminate = value === ThreeStateCheckboxStates.INDETERMINATE;
-    this.renderCheckbox();
   }
 }
