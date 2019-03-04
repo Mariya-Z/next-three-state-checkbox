@@ -10,5 +10,6 @@ export class AppComponent {
   public id = '1';
   public required = true;
   public tabIndex = 1;
-  public isChecked = 2;
+  public isChecked = 1;
+  public isChecked2 = 2;
 }
