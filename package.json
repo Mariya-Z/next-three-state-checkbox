@@ -13,7 +13,9 @@
     "npm_pack": "cd dist/next-three-state-checkbox && npm pack",
     "postinstall": "npm run package",
     "bump": "cd projects/next-three-state-checkbox && yarn version --patch",
-    "package": "yarn bump && yarn build_lib && yarn npm_pack"
+    "package": "yarn bump && yarn build_lib && yarn npm_pack",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "private": true,
   "dependencies": {
@@ -53,6 +55,13 @@
     "tsickle": ">=0.29.0",
     "tslib": "^1.9.0",
     "tslint": "~5.11.0",
-    "typescript": "~3.1.6"
+    "typescript": "~3.1.6",
+    "@babel/core": "^7.3.4",
+    "babel-loader": "^8.0.5",
+    "@storybook/angular": "^4.1.13",
+    "@storybook/addon-notes": "^4.1.13",
+    "@storybook/addon-actions": "^4.1.13",
+    "@storybook/addon-links": "^4.1.13",
+    "@storybook/addons": "^4.1.13"
   }
 }
