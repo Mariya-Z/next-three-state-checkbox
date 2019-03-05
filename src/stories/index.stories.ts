@@ -53,9 +53,6 @@ const styles = `
 
 export const checkedState = {
   isFirstChecked: 0,
-  isFirstUnChecked: false,
-  isThirdChecked: true,
-  isThirdUnChecked: false,
 };
 
 export const checkedStatesForDifferentSize = {
@@ -119,41 +116,41 @@ storiesOf('Next-three-state-checkbox', module)
         ${styles}
         <form class="container">
 
-        <div class="container__row">
-          <next-three-state-checkbox class="small"
-            [disabled]="false"
-            [required]="true"
-            [tabIndex]="1"
-            [id]="1"
-            [(ngModel)]="checkedStatesForDifferentSize.isFirstChecked"
-            name="checkbox1"
-          ></next-three-state-checkbox>
-          <label for="1" class="small checkbox-layout">10px</label>
-        </div>
+          <div class="container__row">
+            <next-three-state-checkbox class="small"
+              [disabled]="false"
+              [required]="true"
+              [tabIndex]="1"
+              [id]="1"
+              [(ngModel)]="checkedStatesForDifferentSize.isFirstChecked"
+              name="checkbox1"
+            ></next-three-state-checkbox>
+            <label for="1" class="small checkbox-layout">10px</label>
+          </div>
 
-        <div class="container__row">
-          <next-three-state-checkbox class="medium"
-            [disabled]="false"
-            [required]="true"
-            [tabIndex]="2"
-            [id]="2"
-            [(ngModel)]="checkedStatesForDifferentSize.isSecondChecked"
-            name="checkbox2"
-          ></next-three-state-checkbox>
-          <label for="2" class="medium checkbox-layout">16px</label>
-        </div>
+          <div class="container__row">
+            <next-three-state-checkbox class="medium"
+              [disabled]="false"
+              [required]="true"
+              [tabIndex]="2"
+              [id]="2"
+              [(ngModel)]="checkedStatesForDifferentSize.isSecondChecked"
+              name="checkbox2"
+            ></next-three-state-checkbox>
+            <label for="2" class="medium checkbox-layout">16px</label>
+          </div>
 
-        <div class="container__row">
-          <next-three-state-checkbox class="big"
-            [disabled]="false"
-            [required]="true"
-            [tabIndex]="3"
-            [id]="3"
-            [(ngModel)]="checkedStatesForDifferentSize.isThirdChecked"
-            name="checkbox3"
-          ></next-three-state-checkbox>
-          <label for="3" class="big checkbox-layout">26px</label>
-        </div>
+          <div class="container__row">
+            <next-three-state-checkbox class="big"
+              [disabled]="false"
+              [required]="true"
+              [tabIndex]="3"
+              [id]="3"
+              [(ngModel)]="checkedStatesForDifferentSize.isThirdChecked"
+              name="checkbox3"
+            ></next-three-state-checkbox>
+            <label for="3" class="big checkbox-layout">26px</label>
+          </div>
         </form>
         `,
         props: {checkedStatesForDifferentSize},
@@ -235,7 +232,7 @@ storiesOf('Next-three-state-checkbox', module)
               [(ngModel)]="checkedStateforDisabled.isSecondUnCheckedDisabled"
               name="checkbox6"
             ></next-three-state-checkbox>
-            <label for="6" class="checkbox-layout">Indeterminate disabled</label>
+            <label for="6" class="checkbox-layout">Unchecked disabled</label>
           </div>
 
         </form>

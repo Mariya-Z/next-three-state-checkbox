@@ -37,4 +37,20 @@ If checkbox is necessary / checkbox has to be checked, you have to pass true for
   }
 </style>
 
+ <form class="container" ngNativeValidate>
+  <div class="container__row">
+      <next-three-state-checkbox
+          [disabled]="false"
+          [required]="true"
+          [tabIndex]="1"
+          [id]="1"
+          [(ngModel)]="isChecked"
+          name="checkbox"
+      ></next-three-state-checkbox>
+      <label for="1" class="checkbox-layout">Required</label>
+  </div>
+  <div>
+    <input class="submit-btn" type="submit" />
+  </div>
+</form>
 ```
