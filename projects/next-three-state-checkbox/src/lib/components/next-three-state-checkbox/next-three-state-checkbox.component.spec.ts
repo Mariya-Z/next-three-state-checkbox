@@ -1,4 +1,4 @@
-import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {async, ComponentFixture, TestBed, fakeAsync, flush} from '@angular/core/testing';
 
 import {NextThreeStateCheckboxComponent} from './next-three-state-checkbox.component';
 import {By} from '@angular/platform-browser';
@@ -118,6 +118,23 @@ describe('ngModel', () => {
       expect(spyOnRegisterOnTouched).toHaveBeenCalled();
     });
   });
+
+  it('should be disabled', async(
+    fakeAsync(() => {
+      const onchange = spyOn(toggleInstance, 'onChange');
+      toggleInstance.disabled = true;
+      toggleInstance.setDisabledState(true);
+      const input = fixture.debugElement.query(By.css('input'));
+      input.triggerEventHandler('change', new Event('change'));
+      fixture.detectChanges();
+
+      fixture.whenStable().then(() => {
+        flush();
+        fixture.detectChanges();
+        expect(onchange).not.toHaveBeenCalled();
+      });
+    }),
+  ));
 });
 
 @Component({
