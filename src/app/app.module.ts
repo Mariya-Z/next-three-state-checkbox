@@ -1,19 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
-import { NextThreeStateCheckboxModule } from 'next-three-state-checkbox';
+import {NextThreeStateCheckboxModule} from 'next-three-state-checkbox';
 
-import { AppComponent } from './app.component';
+import {AppComponent} from './app.component';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    NextThreeStateCheckboxModule,
-    FormsModule,
-  ],
+  imports: [BrowserModule, NextThreeStateCheckboxModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

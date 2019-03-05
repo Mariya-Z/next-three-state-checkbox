@@ -1,4 +1,5 @@
 import {Component} from '@angular/core';
+import {FormGroup, FormControl} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -11,5 +12,7 @@ export class AppComponent {
   public required = true;
   public tabIndex = 1;
   public isChecked = 1;
-  public isChecked2 = 2;
+  public reactiveForm = new FormGroup({
+    threeStateCheckboxControl: new FormControl({value: 1, disabled: false}),
+  });
 }
