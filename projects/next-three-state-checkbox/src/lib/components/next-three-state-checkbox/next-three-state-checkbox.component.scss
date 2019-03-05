@@ -60,6 +60,7 @@ $white: #fff;
   &[disabled] + &__background {
     background-color: $gray-medium;
     cursor: default;
+    border-color: $gray-medium;
   }
 
   &[disabled]:focus + &__background,
@@ -99,5 +100,4 @@ $white: #fff;
     transform: rotate(90deg) translateY(-0.1em) translateX(-0.05em);
     opacity: 1;
   }
-
 }
