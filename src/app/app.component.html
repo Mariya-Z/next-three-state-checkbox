@@ -1,39 +1,32 @@
-<form>
-  <next-three-state-checkbox
-    [disabled]="disabled"
-    [required]="required"
-    [tabIndex]="tabIndex"
-    [id]="id"
-    [(ngModel)]="isChecked"
-    name="name"
-  ></next-three-state-checkbox>
+<form class="container" ngNativeValidate>
+  <div class="container__row">
+    <next-three-state-checkbox
+      [disabled]="!disabled"
+      [required]="required"
+      [tabIndex]="tabIndex"
+      [id]="id"
+      [(ngModel)]="isChecked"
+      name="name"
+    ></next-three-state-checkbox>
+    <label for="1" class="checkbox-layout">Label for three-state-checkbox</label>
+  </div>
+  <div>
+    <input class="submit-btn" type="submit" />
+  </div>
 </form>
 
-<form>
-  <next-three-state-checkbox
-    [disabled]="disabled"
-    [required]="required"
-    [tabIndex]="tabIndex"
-    [id]="id"
-    [(ngModel)]="isChecked2"
-    name="name2"
-  ></next-three-state-checkbox>
-</form>
-
-<form>
-  <next-three-state-checkbox
-    [disabled]="disabled"
-    [required]="required"
-    [tabIndex]="tabIndex"
-    [id]="id"
-  ></next-three-state-checkbox>
-</form>
-
-<form>
-  <next-three-state-checkbox
-    [disabled]="!disabled"
-    [required]="required"
-    [tabIndex]="tabIndex"
-    [id]="id"
-  ></next-three-state-checkbox>
+<form [formGroup]="reactiveForm" class="container" ngNativeValidate>
+  <div>
+    <label for="2" class="checkbox-layout">Reactive form</label>
+    <next-three-state-checkbox
+      [required]="required"
+      [tabIndex]="2"
+      [id]="2"
+      formControlName="threeStateCheckboxControl"
+      name="name2"
+    ></next-three-state-checkbox>
+  </div>
+  <div>
+    <input class="submit-btn" type="submit" />
+  </div>
 </form>
