@@ -23,12 +23,9 @@ $white: #fff;
 .checkbox-inner-container {
   display: inline-block;
   line-height: 0;
-  margin: auto 0.2em;
-  order: 0;
   position: relative;
   vertical-align: middle;
   white-space: nowrap;
-  flex-shrink: 0;
 }
 
 .checkbox-input {
@@ -46,7 +43,7 @@ $white: #fff;
 
   &:focus + &__background,
   &:active + &__background {
-    box-shadow: 0 0 0 1px $gray-outline;
+    box-shadow: 0 0 0 3px $gray-outline;
   }
 
   &:checked + &__background,
@@ -57,7 +54,7 @@ $white: #fff;
 
   &:checked:focus + &__background,
   &:checked:active + &__background {
-    box-shadow: 0 0 0 1px $blue_outline;
+    box-shadow: 0 0 0 3px $blue_outline;
   }
 
   &[disabled] + &__background {
@@ -102,4 +99,5 @@ $white: #fff;
     transform: rotate(90deg) translateY(-0.1em) translateX(-0.05em);
     opacity: 1;
   }
+
 }
