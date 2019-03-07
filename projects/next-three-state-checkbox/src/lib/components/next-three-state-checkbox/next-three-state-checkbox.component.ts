@@ -35,7 +35,7 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
     return this.id;
   }
 
-  public get checked() {
+  public get checked(): number {
     return this.isChecked;
   }
 
