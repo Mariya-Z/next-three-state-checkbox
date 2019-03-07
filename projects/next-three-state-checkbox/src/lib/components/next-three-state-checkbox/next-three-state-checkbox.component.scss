@@ -1,103 +1,90 @@
-$gray: #9d9d9d;
-$gray-light: #ededed;
 $gray-medium: #c6c6c6;
-$gray-outline: #e3e3e3;
+$placeholder-gray: #888;
 $blue: #0460a9;
-$blue-outline: #5291dd;
 $white: #fff;
 
 .cdk-visually-hidden {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
-  margin: -1px;
   overflow: hidden;
   padding: 0;
   position: absolute;
   text-transform: none;
   width: 1px;
-  bottom: 0.8em;
-  margin-left: 1em;
+  bottom: 0;
+  left: 0;
+  margin-left: 1.1em;
 }
 
 .checkbox-inner-container {
-  display: inline-block;
-  line-height: 0;
-  position: relative;
-  vertical-align: middle;
   white-space: nowrap;
+  padding: 0 0 0 1.5em;
+  position: relative;
+  cursor: pointer;
 }
 
-.checkbox-input {
-  &__background {
-    position: relative;
-    display: inline-block;
-    width: 1em;
-    height: 1em;
+.checkbox {
+  input {
     cursor: pointer;
-    transition-duration: 0.3s;
-    transition-property: box-shadow, background-color, transform, opacity, border-color;
-    border: 1px solid var(--next-three-state-checkbox-gray, $gray);
-    overflow: hidden;
-  }
-
-  &:focus + &__background,
-  &:active + &__background {
-    box-shadow: 0 0 0 3px $gray-outline;
-  }
-
-  &:checked + &__background,
-  &.indeterminate + &__background {
-    background-color: $blue;
-    border-color: $blue;
-  }
-
-  &:checked:focus + &__background,
-  &:checked:active + &__background {
-    box-shadow: 0 0 0 3px $blue_outline;
-  }
-
-  &[disabled] + &__background {
-    background-color: $gray-medium;
-    cursor: default;
-    border-color: $gray-medium;
-  }
-
-  &[disabled]:focus + &__background,
-  &[disabled]:active + &__background {
-    box-shadow: inset 0 0 0 1px $blue;
-  }
-
-  &__background:before,
-  &__background:after {
-    left: 0.23em;
-    top: 0.05em;
-    width: 0.4em;
-    height: 0.6em;
-    border: solid $white;
-    border-width: 0 0.15em 0.15em 0;
-    content: '';
-    position: absolute;
+    height: 1px;
+    left: 1.25em;
+    margin: 0;
     opacity: 0;
-    transition: transform 0.2s;
-    transform: translate(0.5em, 0.5em);
-    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    width: 1px;
   }
 
-  &__background:before {
-    left: 0.32em;
+  &__icon {
+    background-color: var(--next-checkbox-white, $white);
+    color: var(--next-checkbox-white, $white);
+    border: 2px solid var(--next-checkbox-blue, $blue);
     height: 1em;
-    width: 0;
-    border-width: 0 0.15em 0 0;
+    width: 1em;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    overflow: hidden;
+    background-image: none;
+    transition: background-color linear 0.1s;
+
+    & svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
   }
 
-  &:checked + &__background:after {
-    transform: rotate(45deg);
-    opacity: 1;
+  input:focus ~ &__icon,
+  input:active ~ &__icon {
+    outline: -webkit-focus-ring-color auto 5px;
   }
 
-  &.indeterminate + &__background:before {
-    transform: rotate(90deg) translateY(-0.1em) translateX(-0.05em);
-    opacity: 1;
+  input.indeterminate ~ &__icon {
+    background-color: var(--next-checkbox-blur, $blue);
+    border-color: var(--next-checkbox-blue, $blue);
+  }
+
+  input:checked ~ &__icon--ind {
+    display: none;
+  }
+
+  input:checked:enabled ~ &__icon {
+    background-color: var(--next-checkbox-blue, $blue);
+    border-color: var(--next-checkbox-blue, $blue);
+  }
+
+  input:disabled ~ &__icon {
+    border-color: var(--next-checkbox-placeholder-gray, $placeholder-gray);
+  }
+
+  input:checked:disabled ~ &__icon,
+  input.indeterminate:disabled ~ &__icon {
+    background-color: var(--next-checkbox-gray-medium, $gray-medium);
   }
 }
