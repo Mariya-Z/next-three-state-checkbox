@@ -38,7 +38,7 @@ Checkbox size depends on font size, developer should change just font size, chec
       [required]="true"
       [tabIndex]="1"
       [id]="1"
-      [(ngModel)]="isFirstChecked"
+      [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
       name="checkbox1"
     ></next-three-state-checkbox>
     <label for="1" class="small checkbox-layout">10px</label>
@@ -50,7 +50,7 @@ Checkbox size depends on font size, developer should change just font size, chec
       [required]="true"
       [tabIndex]="2"
       [id]="2"
-      [(ngModel)]="isSecondChecked"
+      [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
       name="checkbox2"
     ></next-three-state-checkbox>
     <label for="2" class="medium checkbox-layout">16px</label>
@@ -62,7 +62,7 @@ Checkbox size depends on font size, developer should change just font size, chec
       [required]="true"
       [tabIndex]="3"
       [id]="3"
-      [(ngModel)]="isThirdChecked"
+      [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
       name="checkbox3"
     ></next-three-state-checkbox>
     <label for="3" class="big checkbox-layout">26px</label>

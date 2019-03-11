@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
+import {ThreeStateCheckboxStatesEnum} from 'next-three-state-checkbox';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,8 @@ export class AppComponent {
   public id = '1';
   public required = true;
   public tabIndex = 1;
-  public isChecked = 1;
   public reactiveForm = new FormGroup({
-    threeStateCheckboxControl: new FormControl({value: 1, disabled: false}),
+    threeStateCheckboxControl: new FormControl({value: ThreeStateCheckboxStatesEnum.OFF, disabled: false}),
   });
+  public ThreeStateCheckboxStatesEnum = ThreeStateCheckboxStatesEnum;
 }

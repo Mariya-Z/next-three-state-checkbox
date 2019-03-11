@@ -17,9 +17,21 @@ id is optional, if you don't pass it, id will be added automatically. In this ca
 
 This checkbox has three states:
 
-- unchecked (isChecked = 0)
-- indeterminate (isChecked = 1)
-- checked (isChecked = 2)
+- unchecked (off)
+- indeterminate
+- checked (on)
+
+State of checkbox defines as Enum in library
+
+```
+export const enum ThreeStateCheckboxStatesEnum {
+  OFF,
+  INDETERMINATE,
+  ON,
+}
+```
+
+To define checkbox state you should import ThreeStateCheckboxStatesEnum and then use ThreeStateCheckboxStates.ON, ThreeStateCheckboxStates.OFF and ThreeStateCheckboxStates.INDETERMINATE
 
 ## Basic usage example with NgModel
 
@@ -46,9 +58,11 @@ export class AppModule {
 ### Add code to the component file
 
 ```
+import {ThreeStateCheckboxStatesEnum} from 'next-three-state-checkbox';
+
 export class AppComponent {
   ...
-  isChecked = 1;
+  public ThreeStateCheckboxStatesEnum = ThreeStateCheckboxStatesEnum;
 }
 ```
 
@@ -61,7 +75,7 @@ export class AppComponent {
         [required]="true"
         [tabIndex]="1"
         [id]="'1'"
-        [(ngModel)]="isChecked"
+        [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
         name="checkbox"
     ></next-three-state-checkbox>
     <label for="1">Label for checkbox</label>
@@ -96,7 +110,7 @@ export class AppModule {
 export class AppComponent {
   ...
   reactiveForm = new FormGroup({
-    threeStateCheckboxControl: new FormControl({value: 1, disabled: false}),
+    threeStateCheckboxControl: new FormControl({value: ThreeStateCheckboxStatesEnum.ON, disabled: false}),
   });
 }
 ```
@@ -142,7 +156,7 @@ export class AppComponent {
             [required]="true"
             [tabIndex]="1"
             [id]="1"
-            [(ngModel)]="isChecked"
+            [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
             name="checkbox"
         ></next-three-state-checkbox>
         <label for="1" class="checkbox-layout">Label for three-state-checkbox</label>

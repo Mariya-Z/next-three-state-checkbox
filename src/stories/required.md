@@ -44,7 +44,7 @@ If checkbox is necessary / checkbox has to be checked, you have to pass true for
           [required]="true"
           [tabIndex]="1"
           [id]="1"
-          [(ngModel)]="isChecked"
+          [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
           name="checkbox"
       ></next-three-state-checkbox>
       <label for="1" class="checkbox-layout">Required</label>

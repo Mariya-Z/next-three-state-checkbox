@@ -56,7 +56,6 @@ describe('ngModel', () => {
   let fixture: ComponentFixture<NextThreeStateCheckboxWithNgModel>;
   let checkboxDebugElement: DebugElement;
   let checkboxInstance: NextThreeStateCheckboxComponent;
-  let ngModel: NgModel;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
@@ -70,7 +69,6 @@ describe('ngModel', () => {
     fixture.detectChanges();
     checkboxDebugElement = fixture.debugElement.query(By.directive(NextThreeStateCheckboxComponent));
     checkboxInstance = checkboxDebugElement.componentInstance;
-    ngModel = checkboxDebugElement.injector.get<NgModel>(NgModel);
     component = fixture.componentInstance;
   });
 
@@ -253,6 +251,7 @@ class NextThreeStateCheckboxWithNgModel {
   public isChecked: number = 0;
 }
 
+// tslint:disable-next-line:max-classes-per-file
 @Component({
   template: `
     <form [formGroup]="reactiveForm">
