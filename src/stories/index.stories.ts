@@ -153,7 +153,7 @@ storiesOf('Next-three-state-checkbox', module)
           </div>
         </form>
         `,
-        props: {checkedStatesForDifferentSize},
+      props: {checkedStatesForDifferentSize},
     })),
   )
   .add(
@@ -236,9 +236,8 @@ storiesOf('Next-three-state-checkbox', module)
           </div>
 
         </form>
-        `
-        ,
-        props: {checkedStateforDisabled},
+        `,
+      props: {checkedStateforDisabled},
     })),
   )
   .add(
@@ -297,9 +296,8 @@ storiesOf('Next-three-state-checkbox', module)
           </div>
 
         </form>
-        `
-        ,
-        props: {checkedStatesForDiffTabIndex},
+        `,
+      props: {checkedStatesForDiffTabIndex},
     })),
   )
   .add(
@@ -326,5 +324,4 @@ storiesOf('Next-three-state-checkbox', module)
     `,
       props: {checkedRequired},
     })),
-  )
-  ;
+  );
