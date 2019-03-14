@@ -12,7 +12,7 @@ import {ControlValueAccessor, NG_VALUE_ACCESSOR} from '@angular/forms';
 
 let counter = 0;
 
-export const enum ThreeStateCheckboxStates {
+export enum ThreeStateCheckboxStatesEnum {
   OFF,
   INDETERMINATE,
   ON,
@@ -42,7 +42,7 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
   public set checked(checked: number) {
     if (checked !== this.checked) {
       this.isChecked = checked;
-      this.indeterminate = checked === ThreeStateCheckboxStates.INDETERMINATE;
+      this.indeterminate = checked === ThreeStateCheckboxStatesEnum.INDETERMINATE;
       this.renderCheckbox();
     }
   }
@@ -67,11 +67,11 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
     this.checked = value;
   }
 
-  public registerOnChange(fn: any): void {
+  public registerOnChange(fn: (val?: any) => void): void {
     this.controlValueAccessorChangeFn = fn;
   }
 
-  public registerOnTouched(fn: any) {
+  public registerOnTouched(fn: (val?: any) => void): void {
     this.onTouched = fn;
   }
 
@@ -80,7 +80,7 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
     this.changeDetectorRef.markForCheck();
   }
 
-  public onChange(event: Event): void {
+  public onChange(): void {
     this.setState((this.checked + 1) % 3);
     this.controlValueAccessorChangeFn(this.checked);
   }
@@ -90,11 +90,11 @@ export class NextThreeStateCheckboxComponent implements ControlValueAccessor, Af
 
   private renderCheckbox() {
     this.inputCheckbox.nativeElement.indeterminate = this.indeterminate;
-    this.inputCheckbox.nativeElement.checked = this.checked === ThreeStateCheckboxStates.ON;
-    this.inputCheckbox.nativeElement.value = this.checked === ThreeStateCheckboxStates.ON;
+    this.inputCheckbox.nativeElement.checked = this.checked === ThreeStateCheckboxStatesEnum.ON;
+    this.inputCheckbox.nativeElement.value = this.checked === ThreeStateCheckboxStatesEnum.ON;
   }
 
-  private setState(value: ThreeStateCheckboxStates) {
+  private setState(value: ThreeStateCheckboxStatesEnum) {
     this.checked = value;
   }
 }
