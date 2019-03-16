@@ -63,6 +63,8 @@ import {ThreeStateCheckboxStatesEnum} from 'next-three-state-checkbox';
 export class AppComponent {
   ...
   public ThreeStateCheckboxStatesEnum = ThreeStateCheckboxStatesEnum;
+  public isChecked = ThreeStateCheckboxStatesEnum.ON;
+
 }
 ```
 
@@ -75,7 +77,7 @@ export class AppComponent {
         [required]="true"
         [tabIndex]="1"
         [id]="'1'"
-        [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+        [(ngModel)]="isChecked"
         name="checkbox"
     ></next-three-state-checkbox>
     <label for="1">Label for checkbox</label>
@@ -107,10 +109,15 @@ export class AppModule {
 ### Add code to the component file
 
 ```
+import {ThreeStateCheckboxStatesEnum} from 'next-three-state-checkbox';
+
 export class AppComponent {
   ...
+  public ThreeStateCheckboxStatesEnum = ThreeStateCheckboxStatesEnum;
+  public isCheckedReactiveForm = ThreeStateCheckboxStatesEnum.OFF;
+  
   reactiveForm = new FormGroup({
-    threeStateCheckboxControl: new FormControl({value: ThreeStateCheckboxStatesEnum.ON, disabled: false}),
+    threeStateCheckboxControl: new FormControl({value: isCheckedReactiveForm, disabled: false}),
   });
 }
 ```
@@ -156,7 +163,7 @@ export class AppComponent {
             [required]="true"
             [tabIndex]="1"
             [id]="1"
-            [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+            [(ngModel)]="isChecked"
             name="checkbox"
         ></next-three-state-checkbox>
         <label for="1" class="checkbox-layout">Label for three-state-checkbox</label>

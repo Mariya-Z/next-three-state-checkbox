@@ -8,12 +8,15 @@ import {ThreeStateCheckboxStatesEnum} from 'next-three-state-checkbox';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  public ThreeStateCheckboxStatesEnum = ThreeStateCheckboxStatesEnum;
   public disabled = false;
   public id = '1';
   public required = true;
   public tabIndex = 1;
+  public isChecked = ThreeStateCheckboxStatesEnum.ON;
+  public isCheckedReactiveForm = ThreeStateCheckboxStatesEnum.OFF;
+
   public reactiveForm = new FormGroup({
-    threeStateCheckboxControl: new FormControl({value: ThreeStateCheckboxStatesEnum.OFF, disabled: false}),
+    threeStateCheckboxControl: new FormControl({value: this.isCheckedReactiveForm, disabled: false}),
   });
-  public ThreeStateCheckboxStatesEnum = ThreeStateCheckboxStatesEnum;
 }

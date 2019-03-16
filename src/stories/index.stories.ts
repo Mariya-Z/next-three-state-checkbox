@@ -14,6 +14,36 @@ import {
   ThreeStateCheckboxStatesEnum,
 } from 'projects/next-three-state-checkbox/src/public_api';
 
+export const checkedState = {
+  isFirstChecked: ThreeStateCheckboxStatesEnum.ON,
+};
+
+export const checkedStatesForDifferentSize = {
+  isFirstChecked: ThreeStateCheckboxStatesEnum.INDETERMINATE,
+  isSecondChecked: ThreeStateCheckboxStatesEnum.OFF,
+  isThirdChecked: ThreeStateCheckboxStatesEnum.ON,
+};
+
+export const checkedStateforDisabled = {
+  isFirstChecked: ThreeStateCheckboxStatesEnum.ON,
+  isFirstInDetChecked: ThreeStateCheckboxStatesEnum.INDETERMINATE,
+  isFirstUnChecked: ThreeStateCheckboxStatesEnum.OFF,
+  isSecondCheckedDisabled: ThreeStateCheckboxStatesEnum.ON,
+  isSecondIndetCheckedDisabled: ThreeStateCheckboxStatesEnum.INDETERMINATE,
+  isSecondUnCheckedDisabled: ThreeStateCheckboxStatesEnum.OFF,
+};
+
+export const checkedStatesForDiffTabIndex = {
+  isFirstChecked: ThreeStateCheckboxStatesEnum.INDETERMINATE,
+  isSecondChecked: ThreeStateCheckboxStatesEnum.OFF,
+  isThirdChecked: ThreeStateCheckboxStatesEnum.ON,
+  isFourthCheked: ThreeStateCheckboxStatesEnum.OFF,
+};
+
+export const checkedRequired = {
+  isChecked: ThreeStateCheckboxStatesEnum.OFF,
+};
+
 const styles = `
   <style>
   .container \{
@@ -73,14 +103,14 @@ storiesOf('Next-three-state-checkbox', module)
                 [required]="true"
                 [tabIndex]="1"
                 [id]="1"
-                [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+                [(ngModel)]="checkedState.isFirstChecked"
                 name="checkbox"
             ></next-three-state-checkbox>
             <label for="1" class="checkbox-layout">Label for three-state-checkbox</label>
         </div>
       </form>
     `,
-      props: {ThreeStateCheckboxStatesEnum},
+      props: {checkedState},
     })),
   )
   .add(
@@ -96,7 +126,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="1"
               [id]="1"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+              [(ngModel)]="checkedStatesForDifferentSize.isFirstChecked"
               name="checkbox1"
             ></next-three-state-checkbox>
             <label for="1" class="small checkbox-layout">10px</label>
@@ -108,7 +138,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="2"
               [id]="2"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+              [(ngModel)]="checkedStatesForDifferentSize.isSecondChecked"
               name="checkbox2"
             ></next-three-state-checkbox>
             <label for="2" class="medium checkbox-layout">16px</label>
@@ -120,14 +150,14 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="3"
               [id]="3"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+              [(ngModel)]="checkedStatesForDifferentSize.isThirdChecked"
               name="checkbox3"
             ></next-three-state-checkbox>
             <label for="3" class="big checkbox-layout">26px</label>
           </div>
         </form>
         `,
-      props: {ThreeStateCheckboxStatesEnum},
+      props: {checkedStatesForDifferentSize},
     })),
   )
   .add(
@@ -143,7 +173,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="1"
               [id]="1"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+              [(ngModel)]="checkedStateforDisabled.isFirstChecked"
               name="checkbox1"
             ></next-three-state-checkbox>
             <label for="1" class="checkbox-layout">Checked</label>
@@ -155,7 +185,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="2"
               [id]="2"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+              [(ngModel)]="checkedStateforDisabled.isFirstInDetChecked"
               name="checkbox2"
             ></next-three-state-checkbox>
             <label for="2" class="checkbox-layout">Indeterminate</label>
@@ -167,7 +197,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="3"
               [id]="3"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+              [(ngModel)]="checkedStateforDisabled.isFirstUnChecked"
               name="checkbox3"
             ></next-three-state-checkbox>
             <label for="3" class="checkbox-layout">Unchecked</label>
@@ -179,7 +209,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="4"
               [id]="4"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+              [(ngModel)]="checkedStateforDisabled.isSecondCheckedDisabled"
               name="checkbox4"
             ></next-three-state-checkbox>
             <label for="4" class="checkbox-layout">Checked disabled</label>
@@ -191,7 +221,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="5"
               [id]="5"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+              [(ngModel)]="checkedStateforDisabled.isSecondIndetCheckedDisabled"
               name="checkbox5"
             ></next-three-state-checkbox>
             <label for="5" class="checkbox-layout">Indeterminate disabled</label>
@@ -203,7 +233,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="6"
               [id]="6"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+              [(ngModel)]="checkedStateforDisabled.isSecondUnCheckedDisabled"
               name="checkbox6"
             ></next-three-state-checkbox>
             <label for="6" class="checkbox-layout">Unchecked disabled</label>
@@ -211,7 +241,7 @@ storiesOf('Next-three-state-checkbox', module)
 
         </form>
         `,
-      props: {ThreeStateCheckboxStatesEnum},
+      props: {checkedStateforDisabled},
     })),
   )
   .add(
@@ -227,7 +257,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="2"
               [id]="1"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+              [(ngModel)]="checkedStatesForDiffTabIndex.isFirstChecked"
               name="checkbox1"
             ></next-three-state-checkbox>
             <label for="1" class="checkbox-layout">Second</label>
@@ -239,7 +269,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="4"
               [id]="2"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+              [(ngModel)]="checkedStatesForDiffTabIndex.isSecondChecked"
               name="checkbox2"
             ></next-three-state-checkbox>
             <label for="2" class="checkbox-layout">Fourth</label>
@@ -251,7 +281,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="1"
               [id]="3"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+              [(ngModel)]="checkedStatesForDiffTabIndex.isThirdChecked"
               name="checkbox3"
             ></next-three-state-checkbox>
             <label for="3" class="checkbox-layout">First</label>
@@ -263,7 +293,7 @@ storiesOf('Next-three-state-checkbox', module)
               [required]="true"
               [tabIndex]="3"
               [id]="4"
-              [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+              [(ngModel)]="checkedStatesForDiffTabIndex.isFourthCheked"
               name="checkbox4"
             ></next-three-state-checkbox>
             <label for="4" class="checkbox-layout">Third</label>
@@ -271,7 +301,7 @@ storiesOf('Next-three-state-checkbox', module)
 
         </form>
         `,
-      props: {ThreeStateCheckboxStatesEnum},
+      props: {checkedStatesForDiffTabIndex},
     })),
   )
   .add(
@@ -286,7 +316,7 @@ storiesOf('Next-three-state-checkbox', module)
                 [required]="true"
                 [tabIndex]="1"
                 [id]="1"
-                [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+                [(ngModel)]="checkedRequired.isChecked"
                 name="checkbox"
             ></next-three-state-checkbox>
             <label for="1" class="checkbox-layout">Required</label>
@@ -296,6 +326,6 @@ storiesOf('Next-three-state-checkbox', module)
         </div>
       </form>
     `,
-      props: {ThreeStateCheckboxStatesEnum},
+      props: {checkedRequired},
     })),
   );
