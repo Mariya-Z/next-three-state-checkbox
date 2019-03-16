@@ -29,7 +29,7 @@ If user shouldn't have possibility to change checkbox mode, you have to pass tru
       [required]="true"
       [tabIndex]="1"
       [id]="1"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+      [(ngModel)]="isFirstChecked"
       name="checkbox1"
     ></next-three-state-checkbox>
     <label for="1" class="checkbox-layout">Checked</label>
@@ -41,7 +41,7 @@ If user shouldn't have possibility to change checkbox mode, you have to pass tru
       [required]="true"
       [tabIndex]="2"
       [id]="2"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+      [(ngModel)]="isFirstInDetChecked"
       name="checkbox2"
     ></next-three-state-checkbox>
     <label for="2" class="checkbox-layout">Indeterminate</label>
@@ -53,7 +53,7 @@ If user shouldn't have possibility to change checkbox mode, you have to pass tru
       [required]="true"
       [tabIndex]="3"
       [id]="3"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+      [(ngModel)]="isFirstUnChecked"
       name="checkbox3"
     ></next-three-state-checkbox>
     <label for="3" class="checkbox-layout">Unchecked</label>
@@ -65,7 +65,7 @@ If user shouldn't have possibility to change checkbox mode, you have to pass tru
       [required]="true"
       [tabIndex]="4"
       [id]="4"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+      [(ngModel)]="isSecondCheckedDisabled"
       name="checkbox4"
     ></next-three-state-checkbox>
     <label for="4" class="checkbox-layout">Checked disabled</label>
@@ -77,7 +77,7 @@ If user shouldn't have possibility to change checkbox mode, you have to pass tru
       [required]="true"
       [tabIndex]="5"
       [id]="5"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+      [(ngModel)]="isSecondIndetCheckedDisabled"
       name="checkbox5"
     ></next-three-state-checkbox>
     <label for="5" class="checkbox-layout">Indeterminate disabled</label>
@@ -89,7 +89,7 @@ If user shouldn't have possibility to change checkbox mode, you have to pass tru
       [required]="true"
       [tabIndex]="6"
       [id]="6"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+      [(ngModel)]="isSecondUnCheckedDisabled"
       name="checkbox6"
     ></next-three-state-checkbox>
     <label for="6" class="checkbox-layout">Indeterminate disabled</label>

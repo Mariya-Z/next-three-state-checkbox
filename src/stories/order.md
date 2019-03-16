@@ -30,7 +30,7 @@ Checkbox has input tabIndex parameter that's why it's possible to change element
       [required]="true"
       [tabIndex]="2"
       [id]="1"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.INDETERMINATE"
+      [(ngModel)]="isFirstChecked"
       name="checkbox1"
     ></next-three-state-checkbox>
     <label for="1" class="checkbox-layout">Second</label>
@@ -42,7 +42,7 @@ Checkbox has input tabIndex parameter that's why it's possible to change element
       [required]="true"
       [tabIndex]="4"
       [id]="2"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+      [(ngModel)]="isSecondChecked"
       name="checkbox2"
     ></next-three-state-checkbox>
     <label for="2" class="checkbox-layout">Fourth</label>
@@ -54,7 +54,7 @@ Checkbox has input tabIndex parameter that's why it's possible to change element
       [required]="true"
       [tabIndex]="1"
       [id]="3"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.ON"
+      [(ngModel)]="isThirdChecked"
       name="checkbox3"
     ></next-three-state-checkbox>
     <label for="3" class="checkbox-layout">First</label>
@@ -66,7 +66,7 @@ Checkbox has input tabIndex parameter that's why it's possible to change element
       [required]="true"
       [tabIndex]="3"
       [id]="4"
-      [(ngModel)]="ThreeStateCheckboxStatesEnum.OFF"
+      [(ngModel)]="isFourthCheked"
       name="checkbox4"
     ></next-three-state-checkbox>
     <label for="4" class="checkbox-layout">Third</label>
