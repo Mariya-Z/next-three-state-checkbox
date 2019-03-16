@@ -3,7 +3,7 @@ import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {NextThreeStateCheckboxComponent} from './next-three-state-checkbox.component';
 import {By} from '@angular/platform-browser';
 import {Component, DebugElement} from '@angular/core';
-import {NgModel, FormsModule, FormGroup, FormControl, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, FormGroup, FormControl, ReactiveFormsModule} from '@angular/forms';
 
 describe('ThreeStateCheckboxComponent', () => {
   let component: NextThreeStateCheckboxComponent;
