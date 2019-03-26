@@ -68,7 +68,7 @@ $white: #fff;
     outline: -webkit-focus-ring-color auto 5px;
   }
 
-  input.indeterminate ~ &__icon {
+  input.indeterminate ~ &__icon--ind {
     background-color: $blue;
     background-color: var(--next-checkbox-blur, $blue);
     border-color: $blue;
@@ -77,6 +77,11 @@ $white: #fff;
 
   input:checked ~ &__icon--ind {
     display: none;
+  }
+
+  // To make it works in IE 11
+  input.indeterminate:checked ~ &__icon--ind {
+    display: block;
   }
 
   input:checked:enabled ~ &__icon {
